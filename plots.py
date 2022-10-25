@@ -45,24 +45,19 @@ ax.bar(buckets, counts)
 #plt.title('Orbital Period Distribution of Near-Earth Objects Discovered By NEOWISE')
 plt.xlabel('Oribital Period Around Sun (years)')
 plt.ylabel('Number of Near-Earth Objects')
-plt.show()
+#plt.show()
 
-df = pd.read_csv(r'causedeathfr.csv', encoding="latin-1")
-print(df)
+df = pd.read_csv(r'adultarrests.csv', encoding="latin-1")
+#print(df)
 
-dict = {}
+drug = df.groupby('Year')['Drug Felony'].sum()
+violent = df.groupby('Year')['Violent Felony'].sum()
+print(drug)
 
-columns = ['TIME', "ICD10", 'Value']
+#df.plot(drug)
 
-'''
-df = pd.read_csv(r'causedeathfr.csv', usecols=columns)
-
-# Plot the lines
-df.plot()
-
-plt.show()
+#plt.show()
 
 
 #test1 = df.values()
 #test2 = df.keys()
-'''
