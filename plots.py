@@ -2,7 +2,6 @@ import pandas as pd
 import json
 import matplotlib.pyplot as plt
 import csv
-from operator import itemgetter
 
 with open('asteroids.json', 'rb') as f:
     text = f.read()
@@ -37,29 +36,27 @@ for op in orbital_periods:
         periods["5-10"] += 1
     if op >= 10.0:
         periods["10+"] += 1
-print(periods)
 
 buckets = list(periods.keys())
 counts = list(periods.values())
 
 fig, ax = plt.subplots()
 ax.bar(buckets, counts)
-plt.title('Orbital Period Distribution of Asteroids Discovered By NEOWISE')
+plt.title('Orbital Period Distribution of Near-Earth Objects Discovered By NEOWISE')
 plt.xlabel('Oribital Period Around Sun (years)')
-plt.ylabel('Number of Asteroids')
-plt.show()
+plt.ylabel('Number of Near-Earth Objects')
+#plt.show()
 
-'''
-buckets = list(periods.keys())
-value = list(periods.values())
 
-#df = pd.read_csv(r'causedeathfr.csv', encoding="latin-1")
-#print(df)
+
+df = pd.read_csv(r'causedeathfr.csv', encoding="latin-1")
+print(df)
 
 dict = {}
 
 columns = ['TIME', "ICD10", 'Value']
 
+'''
 df = pd.read_csv(r'causedeathfr.csv', usecols=columns)
 
 # Plot the lines
