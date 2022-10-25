@@ -42,12 +42,10 @@ counts = list(periods.values())
 
 fig, ax = plt.subplots()
 ax.bar(buckets, counts)
-plt.title('Orbital Period Distribution of Near-Earth Objects Discovered By NEOWISE')
+#plt.title('Orbital Period Distribution of Near-Earth Objects Discovered By NEOWISE')
 plt.xlabel('Oribital Period Around Sun (years)')
 plt.ylabel('Number of Near-Earth Objects')
-#plt.show()
-
-
+plt.show()
 
 df = pd.read_csv(r'causedeathfr.csv', encoding="latin-1")
 print(df)
